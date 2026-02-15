@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forever 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Screen 1: Blossom Intro -->
+  <section class="screen active" id="screen1">
+    <div class="tree"></div>
+    <div class="petals"></div>
+    <div class="sparkles"></div>
+    <h1 id="typingText"></h1>
+    <button class="next-btn">Next</button>
+  </section>
+
+  <!-- Screen 2: Interactive Question -->
+  <section class="screen" id="screen2">
+    <div class="clouds"></div>
+    <h1>How was your day?</h1>
+    <div class="choice-buttons">
+      <button class="choice-btn" data-choice="good">Good</button>
+      <button class="choice-btn" data-choice="bad">Bad</button>
+    </div>
+    <p id="choice-response"></p>
+  </section>
+
+  <!-- Screen 3: Mini Puzzle -->
+  <section class="screen" id="screen3">
+    <div class="stars"></div>
+    <div class="shooting-star"></div>
+    <h1>Solve the puzzle: Click 1 → 3 → 2</h1>
+    <div id="puzzle">
+      <button class="puzzle-btn" data-num="1">1</button>
+      <button class="puzzle-btn" data-num="2">2</button>
+      <button class="puzzle-btn" data-num="3">3</button>
+    </div>
+    <p id="puzzle-response"></p>
+  </section>
+
+  <!-- Screen 4: Magical Butterfly Scene -->
+  <section class="screen" id="screen4">
+    <div class="butterflies"></div>
+    <div class="sparkles"></div>
+    <h1>Every moment with you feels magical 🦋✨</h1>
+    <button class="next-btn wavy">Next</button>
+  </section>
+
+  <!-- Screen 5: Final Proposal -->
+  <section class="screen" id="screen5">
+    <div class="hearts"></div>
+    <div class="confetti"></div>
+    <h1 class="proposal">Will you be my forever? 💖</h1>
+    <button class="yes-btn">YES 💕</button>
+    <p id="final-message"></p>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

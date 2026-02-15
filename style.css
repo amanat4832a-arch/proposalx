@@ -1,0 +1,46 @@
+/*------------------------
+  Reset & Setup
+-------------------------*/
+*{ margin:0; padding:0; box-sizing:border-box; font-family:system-ui,sans-serif;}
+body,html{ height:100%; overflow:hidden;}
+.screen{ position:absolute; width:100%; height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; opacity:0; pointer-events:none; transition:opacity 1s ease, transform 1s ease;}
+.screen.active{ opacity:1; pointer-events:auto; transform:scale(1);}
+h1{ color:white; text-shadow:0 0 20px rgba(255,255,255,0.6); margin-bottom:20px; max-width:90%; z-index:2;}
+
+/* Buttons */
+button{ padding:12px 25px; border:none; border-radius:50px; background:rgba(255,255,255,0.2); color:white; cursor:pointer; position:relative; overflow:hidden; margin:5px; transition:0.3s;}
+button:hover{ transform:scale(1.1); box-shadow:0 0 30px rgba(255,255,255,0.7);}
+button:active::after{ content:""; position:absolute; width:100px; height:100px; background:rgba(255,255,255,0.5); border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%) scale(0); animation:ripple 0.6s linear;}
+@keyframes ripple{ to{ transform:translate(-50%,-50%) scale(4); opacity:0; } }
+.wavy:hover{ animation:wavy 0.6s infinite alternate;}
+@keyframes wavy{ 0%{ transform:translateY(0);} 50%{ transform:translateY(-5px);} 100%{ transform:translateY(0); } }
+
+/* Screen Backgrounds */
+#screen1{ background: linear-gradient(to top,#ff9eb5,#ffd6e0);}
+#screen2{ background: linear-gradient(to top,#6ec6ff,#b3e5ff);}
+#screen3{ background: linear-gradient(to top,#0f2027,#203a43,#2c5364);}
+#screen4{ background: linear-gradient(to top,#2b1055,#7597de);}
+#screen5{ background: linear-gradient(to top,#ff4e75,#ff8fa3);}
+
+/* Tree & Petals */
+.tree{ position:absolute; bottom:0; width:20px; height:120px; background:#5d4037; z-index:1;}
+.tree::before{ content:""; position:absolute; bottom:80px; left:-60px; width:140px; height:140px; background:pink; border-radius:50%; box-shadow:0 0 40px pink;}
+.petal{ position:absolute; width:8px; height:8px; background:pink; border-radius:50%; opacity:0.9;}
+
+/* Clouds */
+.clouds{ position:absolute; width:100%; height:100%; top:0; left:0; pointer-events:none; z-index:0;}
+.clouds::before, .clouds::after{ content:""; position:absolute; background:white; border-radius:50%; width:120px; height:60px; top:25%; opacity:0.5; animation:drift 30s linear infinite;}
+.clouds::after{ top:45%; width:150px; height:70px; animation-duration:40s;}
+@keyframes drift{ from{ transform:translateX(-150%);} to{ transform:translateX(150%);} }
+
+/* Stars & Shooting Star */
+.star{ position:absolute; width:2px; height:2px; background:white; border-radius:50%;}
+.shooting-star{ position:absolute; width:3px; height:3px; background:white; box-shadow:0 0 20px white;}
+
+/* Butterflies */
+.butterfly{ position:absolute; width:14px; height:14px; background:radial-gradient(circle,white,transparent); border-radius:50%; z-index:1;}
+
+/* Hearts */
+.heart{ position:absolute; width:14px; height:14px; background:red; transform:rotate(45deg);}
+.heart::before,.heart::after{ content:""; position:absolute; width:14px; height:14px; background:red; border-radius:50%;}
+.heart::before{ top:-7px;} .heart::after{ left:-7px;}
